@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Catalogo Murillo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta charset="utf-8">
+		
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="jquery-mobile/clientes-custom-theme.min.css" />
+    <link href="jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script src="jquery-mobile/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+        
+  </head>
+
+
+  <body onload="onBodyLoad()">
+       
+  <!--  esta es la página de entrada: el listado de Laptops-->
+    <div data-role="page" id="home">
+      <div data-role="header" name="header">
+        <div class="ui-btn-left">
+          <a href="#form" data-role="button" data-inline="true" data-icon="plus" data-iconpos="notext">Nuevo</a>
+        </div>
+      	<h1>Productos</h1>
+        
+        <div class="ui-btn-right">
+          <a href="#ayuda" data-role="button" data-inline="true" data-icon="info" data-iconpos="notext">Acerca de mí</a>
+        </div>
+      </div>
+      <div data-role="content">
+        <div data-role="collapsible-set">
+          <div data-role="collapsible" id="lista_asus">
+            <h3>Asus</h3>
+            <ul data-role="listview" data-split-icon="edit" data-filter="true" data-filter-placeholder="Buscar...">
+              <li><a href="#asus1"><img src="images/rog_gx700_4.png" width="640" height="640" />
+                <h3>Asus ROG GX700</h3>
+                <p>MX$ 87,033</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#asus2"><img src="images/1-g752_1.png" width="640" height="640" />
+                <h3>Asus ROG G752vt</h3>
+                <p>MX$ 29,418</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#asus3"><img src="images/3.png" width="640" height="640" />
+                <h3>Asus ROG G751jt</h3>
+                <p>MX$ 27,973</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#asus4"><img src="images/rog_gl552jw_1.png" width="640" height="640" />
+                <h3>Asus ROG GL552jw</h3>
+                <p>MX$ 22,018</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#asus5"><img src="images/4.png" width="640" height="640" />
+                <h3>Asus Zenbook UX305</h3>
+                <p>MX$ 14,985</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+            </ul>
+          </div>
+          <div data-role="collapsible" data-collapsed="true" id="lista_dell">
+            <h3>Dell</h3>
+            <ul data-role="listview" data-split-icon="edit" data-filter="true" data-filter-placeholder="Buscar...">
+              <li><a href="#dell6"><img src="images/1_2.png" width="640" height="640" />
+                <h3>Alienware 17 R3</h3>
+                <p>MX$ 40,000</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#dell7"><img src="images/1_3.png" width="640" height="640" />
+                <h3>Alienware 15 R2</h3>
+                <p>MX$ 30,370</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#dell8"><img src="images/1_4.png" width="640" height="640" />
+                <h3>Alienware 13 R2</h3>
+                <p>MX$ 28,520</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#dell9"><img src="images/1_5.png" width="640" height="640" />
+                <h3>XPS 15</h3>
+                <p>MX$ 39,101</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#dell10"><img src="images/1_6.png" width="640" height="640" />
+                <h3>XPS 13</h3>
+                <p>MX$ 24,563</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+            </ul>
+          </div>
+          <div data-role="collapsible" data-collapsed="true" id="lista_msi">
+            <h3>Msi</h3>
+            <ul data-role="listview" data-split-icon="edit" data-filter="true" data-filter-placeholder="Buscar...">
+              <li><a href="#msi11"><img src="images/1_7.png" width="640" height="640"/>
+                <h3>MSI GT80 Titan</h3>
+                <p>MX$ 76,713</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#msi12"><img src="images/1_8.png" width="640" height="640" />
+                <h3>MSI GT72 Dominator Pro</h3>
+                <p>MX$ 43,769</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#msi13"><img src="images/5_1.png" width="640" height="640" />
+                <h3>MSI GT70 Dominator</h3>
+                <p>MX$ 28,642</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#msi14"><img src="images/1_10.png" width="640" height="640" />
+                <h3>MSI PE60 6QE</h3>
+                <p>MX$ 20,997</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+              <li><a href="#msi15"><img src="images/1_11.png" width="640" height="640" />
+                <h3>MSI WS60</h3>
+                <p>MX$ 37,798</p>
+                <a href="#formedi">Editar</a></li>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div data-role="footer" data-position="fixed" data-id="footerid">
+        <div data-role="navbar">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+
+
+    <!--página de agregar agregar productos-->
+    <div data-role="page" id="form">
+      <div data-role="header">
+      	<div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Agregar Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+        	<div id="fotoEdit"><a href="#"><img id="fotoEdit_img" src="assets/notebook-512.png" /></a>
+          </div>
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="text" name="ti_id" id="ti_id" value="" placeholder="id" />
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="text" name="ti_nombre" id="ti_nombre" value="" placeholder="nombre" />
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="text" name="ti_descripcion" id="ti_descripcion" value="" placeholder="descripción" />
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="number" name="ti_precio" id="ti_precio" value="" placeholder="precio" />
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="number" name="ti_exis" id="ti_exis" value="" placeholder="existencia" />
+        </div>
+
+        <div id="cajaCategorias">
+          <div data-role="fieldcontain" align="center">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+              <input type="radio" name="categoriaSel" id="cat_ocasional" value="ocasional" />
+              <label for="cat_ocasional">Asus</label>
+              <input type="radio" name="categoriaSel" id="cat_frecuente" value="frecuente" />
+              <label for="cat_frecuente">Dell</label>
+              <input type="radio" name="categoriaSel" id="cat_promedio" value="promedio" />
+              <label for="cat_promedio">Msi</label>
+            </fieldset>               
+          </div>          
+        </div>
+
+        <div data-role="fieldcontain" align="center">
+          <p>Fecha de Registro</p><input type="date" name="ti_date" id="ti_date" value="" placeholder="fecha"/>
+        </div>
+	
+
+        <div class="ui-grid-a">
+          <div class="ui-block-a"><button id="b_guardar">Guardar</button></div>
+          <div class="ui-block-b"><button id="b_cancelar">Cancelar</button></div>
+        </div>
+        
+      </div>
+      <div data-role="footer" data-position="fixed" data-id="footerid">
+        <div data-role="navbar">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#ayuda" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!--página de edicion de productos-->
+    <div data-role="page" id="formedi">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Edición Producto</h1>
+        <div class="ui-btn-right">
+          <a href="#confirm" data-role="button" data-rel="dialog" data-inline="true" data-icon="delete" data-iconpos="notext">Eliminar</a>
+        </div>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div id="fotoEdit"><a href="#"><img id="fotoEdit_img" src="assets/notebook-512.png" /></a>
+          </div>
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="text" name="ti_id" id="ti_id" value="" placeholder="id" />
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="text" name="ti_nombre" id="ti_nombre" value="" placeholder="nombre" />
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="text" name="ti_descripcion" id="ti_descripcion" value="" placeholder="descripción" />
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="number" name="ti_precio" id="ti_precio" value="" placeholder="precio" />
+        </div>
+        <div data-role="fieldcontain" align="center">
+          <input type="number" name="ti_exis" id="ti_exis" value="" placeholder="existencia" />
+        </div>
+
+        <div id="cajaCategorias">
+          <div data-role="fieldcontain" align="center">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+              <input type="radio" name="categoriaSel" id="cat_ocasional" value="ocasional" />
+              <label for="cat_ocasional">Asus</label>
+              <input type="radio" name="categoriaSel" id="cat_frecuente" value="frecuente" />
+              <label for="cat_frecuente">Dell</label>
+              <input type="radio" name="categoriaSel" id="cat_promedio" value="promedio" />
+              <label for="cat_promedio">Msi</label>
+            </fieldset>               
+          </div>          
+        </div>
+
+        <div data-role="fieldcontain" align="center">
+          <p>Fecha de Registro</p><input type="date" name="ti_date" id="ti_date" value="" placeholder="fecha"/>
+        </div>
+  
+
+        <div class="ui-grid-a">
+          <div class="ui-block-a"><button id="b_guardar">Guardar</button></div>
+          <div class="ui-block-b"><button id="b_cancelar">Cancelar</button></div>
+        </div>
+        
+      </div>
+      <div data-role="footer" data-position="fixed" data-id="footerid">
+        <div data-role="navbar">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#ayuda" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div>
+      </div>
+    </div>
+  
+
+  
+
+  <!--Confirmacion para eliminar producto-->
+    <div data-role="page" id="confirm">
+      <div data-role="header">
+        <h1>Confirmación</h1>
+      </div>
+      <div data-role="content">
+        <div align="center"><p>¿Estás seguro de que quieres eliminar este producto?</p>
+        </div>
+        <div class="ui-grid-a">
+          <div class="ui-block-a">
+            <div align="center"><a href="#home" data-role="button">Aceptar</a>
+            </div>
+          </div>
+          <div class="ui-block-b">
+            <div align="center"><a href="#formedi" data-role="button">Cancelar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+    <!--página de acerca de mí-->
+    <div data-role="page" id="ayuda">
+      <div data-role="header">
+      	<div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Acerca de mí</h1>
+      </div>
+      <div data-role="content">
+      <div class="marco1"> 
+      	<div align="center"><img src="images/murillo.png" width="140">
+   	    </div>
+        </div>
+      	<ul id="listaAyuda">
+          <b>Nombre</b>
+          <li>Francisco Alejandro Murillo Cárdenas</li><br>
+          <b>Carrera</b>
+          <li>Licenciatura en Ingeniería en Sistemas de Información</li><br>
+          <b>Materia</b>
+          <li>Desarrollo Aplicaciones e-commerce </li><br>
+          <b>Preferencias</b>
+          <li>Programación</li>
+          <li>Videojuegos</li>
+          <li>Series</li>
+        </ul>
+      </div>
+      <div data-role="footer" data-position="fixed" data-id="footerid">
+        <div data-role="navbar">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#info" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--página de mas informacion-->
+    <div data-role="page" id="info">
+      <div data-role="header">
+        <h1>Mas Información</h1>
+      </div>
+      <div data-role="content">
+        <ul id="listaAyuda">
+          <li>Aplicación desarrollada mediante PhoneGap para Proyecto Final</li><br>
+          <li>Por Francisco Murillo - Junio de 2016</li>
+        </ul>
+        <div align="center"><a href="#home" data-role="button" style='width:130px;'>Cerrar</a>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--  PRODUCTOS-->
+
+
+
+
+
+    <!--  Pagina de Laptop 1 ASUS ROG GX700-->
+    <div data-role="page" id="asus1">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/rog_gx700_4.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>Asus ROG GX700</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 87,033</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Con pantalla de 17,3 pulgadas y resolución 4K. Un procesador overclockable, Intel Core i7-6820HK 2.7GHz quad-core. 64 GB de memoria RAM DDR4. Tarjeta gráfica Nvidia GeForce GTX 980 de chips gráficos con 8 GB de memoria GDDR5. La pieza de resistencia: un sistema de refrigeración por agua externa gigante que en realidad las tuberías de refrigerante líquido a través de las entrañas de este portátil para ayudar a enfriar los componentes hacia abajo.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 2 Asus ROG G752vt-->
+    <div data-role="page" id="asus2">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1-g752_1.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>Asus ROG G752vt</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 29,418</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador Intel Core i7 (6th Gen) 6700HQ / 2.6 GHz Quad-Core con Velocidad turbo máx. 3.5 GHz. Memoria RAM 16 GB DDR4 2133 MHz soporta un máximo de 64 GB. Tarjeta gráfica NVIDIA GeForce GTX 970M - 3 GB GDDR5 SDRAM. Pantalla 1920 x 1080 ( Full HD). Windows 10 Home 64-bit Edition.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 3 Asus ROG G751jt-->
+    <div data-role="page" id="asus3">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/3.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>Asus ROG G751jt</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 27,973</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador Intel Core i7-4720HQ Quad Core (6M Cache, 2.6GHz - 3.6GHz). Tarjeta gráfica Nvidia GeForce GTX 970M 3GB GDDR5. Memoria RAM 16GB DDR3 SDRAM. Disco duro de estado solido de 500GB. Pantalla 17.3" Full HD IPS Display (1920 x 1080). Sistema Operativo Windows 10 64-bit.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 4 Asus ROG GL552jw-->
+    <div data-role="page" id="asus4">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/rog_gl552jw_1.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>Asus ROG GL552jw</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 22,018</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador Intel Core i7 4710HQ 2.5GHz (Turbo to 3.5 GHz). Tarjeta gráfica NVIDIA GeForce GTX 860M 2GB GDDR5. Memoria RAM de 16GB DDR3 (2x 8GB at 1600MHz). Disco duro 1TB 7200RPM Hard Drive. Pantalla de 15.6 pulgadas, 16:9, 1920x1080 pixeles.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 5 Asus Zenbook UX305-->
+    <div data-role="page" id="asus5">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/4.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>Asus Zenbook UX305</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 14,985</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador Intel Core M-5Y10c 800 MHz (hasta 2 GHz). Tarjeta gráfica NVIDIA GeForce GTX 960M con hasta 4GB de memoria GDDR5. Pantalla de 1.920 x 1.080 píxeles. Memoria RAM de 8 GB. Disco duro 120 GB SSD. Sistema operativo Windows 8.1 con Bing de 32 bits.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 6 Alienware 17 R3-->
+    <div data-role="page" id="dell6">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1_2.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>Alienware 17 R3t</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 40,000</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Sexta generación del procesador Intel Core™ i7-6700HQ (6MB Caché, hasta 3.50 GHz). Sistema operativo Windows 10 Pro, 64-bit, Español. Pantalla LED tecnología IPS con antireflejo 300-nits de 17.3" de alta definición completa (FHD) (1920x1080). Tarjeta de Video NVIDIA GeForce GTX 970M con 3GB GDDR5. 16GB de Memoria RAM de doble canal DDR4 a 2133MHz, 2 DIMMs. Disco Duro SATA de 1TB 7200 RPM 6Gb/s. Tarjeta Inalámbrica Killer N1535 802.11ac doble banda WiFi y Bluetooth 4.1. Bateria de Ión de Litio de 8-celdas, 92 Watt-horas, Hasta 6,5 horas de duración de la batería.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+
+    <!--  Pagina de Laptop 7 Alienware 15 R2-->
+    <div data-role="page" id="dell7">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1_3.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>Alienware 15 R2</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 30,370</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Sexta generación del procesador Intel Core™ i5-6300HQ (6MB Cache, hasta 3.20 GHz). Sistema Operativo Windows 10 Pro, 64-bit, Español. Pantalla LED tecnología IPS con antireflejo 220-nits de 15.6" de alta definición completa (FHD) (1920x1080). Tarjeta de Video NVIDIA GeForce GTX 965M con 2GB GDDR5. Disco Duro SATA de 1TB 7200 RPM 6Gb/s. Tarjeta Inalámbrica Killer N1535 802.11ac doble banda WiFi y Bluetooth 4.1. Bateria de Ión de Litio de 8-celdas, 92 Watt-horas.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+
+    <!--  Pagina de Laptop 8 Alienware 13 R2-->
+    <div data-role="page" id="dell8">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1_5.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>Alienware 13 R2</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 28,520</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador sexta generacion Intel Core™ i5-6200U (Dual-Core, 3MB Cache, up to 2.8GHz w/ Turbo Boost). Tarjeta de Video NVIDIA® GeForce GTX 960M con 2GB GDDR5. Windows 10 Pro 64-bit Español. Memoria RAM 8GB Doble Canal DDR3L 1600MHz (2x4GB). Disco Duro de 500GB 5400RPM Hybrid (8GB Cache) SSD SATA 6Gb/s. Pantalla 13 pulgadas HD (1366 x 768).</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 9 XPS 15-->
+    <div data-role="page" id="dell9">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1_5.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>XPS 15</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 39,101</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Sexta generación del procesador Intel Core™ i7-6700HQ (6MB Caché, hasta 3.50 GHz). Sistema Operativo Windows 10 Home Single Language, 64-bit, Español. Memoria RAM de 16GB DDR4 a 2133MHz. Tarjeta de Video NVIDIA GeForce GTX 960M con 2GB GDDR5. Disco de estado sólido PCIe (SSD) de 512GB. Pantalla InfinityEdge de 15.6" de alta definición completa (FHD) (1920 x 1080). Tarjeta inalámbrica Dell 1830 de doble banda 2.4/5.0GHz 802.11ac Wi-Fi + Bluetooth 4.1. Bateria de Ión de Litio de 6-celdas, 84 Watt-horas.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 9 XPS 13-->
+    <div data-role="page" id="dell10">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1_6.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>XPS 13</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 24,563</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Sexta generación del procesador Intel Core™ i5-6200U (3MB Caché, hasta 2.80 GHz). Tarjeta de Video Gráficos integrados Intel HD 520. Disco de estado sólido (SSD) de 128GB. Sistema operativo Windows 10 Home Single Language, 64-bit, Español. Memoria RAM 4GB LPDDR3 a 1866MHz. Pantalla InfinityEdge de 13.3" de alta definición completa (FHD) (1920 x 1080).</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 11 MSI GT80 Titan-->
+    <div data-role="page" id="msi11">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1_7.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>MSI GT80 Titan</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 76,713</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador Intel Core i7-4980HQ 4 núcleos (8 hilos) a 2,8~4,0 GHz TDP de 47 vatios, 22nm. Gráficas dedicadas 2x NVidia GeForce GTX 980M 16 GB GDDR5 (8x2). Memoria RAM de 32 GB DDR3-1600 MHz. Pantalla de 18,4 pulgadas 1920x1080 píxeles (120 ppp). Disco duro 4xSSD M.2 de 128 GB y en Super RAID 1xHDD 1 TB. Batería de 8 celdas. Teclado mecánico SteelSeries con Cherry MX Brown, retroiluminación en rojo. Audio Sound Blaster Cinema 2 + altavoces Dynaudio Premium. Unidad óptica Blu-Ray. LAN Killer E2200. WiFi Killer N1525 hasta 802.11ac. Bluetooth 4.1. Lector de tarjetas SD. Cámara frontal FullHD.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 12 MSI GT72 Dominator Pro-->
+    <div data-role="page" id="msi12">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1_8.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>MSI GT72 Dominator Pro</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 43,769</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador Intel Core i7-4710MQ 4 núcleos (8 hilos) a 2,5~3,5 GHz 22 nm., TDP de 47 vatios. Gráfica dedicada NVidia GeForce GTX 880M 954 MHz. + Boost, 1.536 núcleos CUDA 8 GB GDDR5 256bits. Memoria RAM de 16 GB DDR3 (2x8 GB). Pantalla de 17,3 pulgadas LED FullHD, 1920x1080 píxeles. Disco duro SSD 256 GB mSATA (2x128 GB en RAID 0) HDD 1 TB 7.200 rpm SATA3. Batería de 9 celdas Fuente de alimentación de 230 vatios. Trackpad y teclado SteelSeries con retroiluminación. Killer E2200 (Ethernet Gigabit) + Killer N1525 (WiFi ac). 2xDisplayPort + 1xVGA + 1xHDMI. Bluetooth 4.0. Audio Sound Blaster Cinema 2 Dynaudio.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 13 MSI GT70 Dominator-->
+    <div data-role="page" id="msi13">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/5_1.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>MSI GT70 Dominator</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 28,642</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador Intel Core i7-4710MQ (2.5 GHz, 6 MB). Memoria RAM 16GB DDR3 SODIMM (2x8GB). Tarjeta Grafica Nvidia GeForce GTX 970M 3GB GDDR5. Disco duro 1TB (7200 rpm S-ATA) Almacenamiento Optico SuperMulti DVD (SATA). Display 17.3" LED Full HD (1920 x 1080) 16:9 Anti-glare. Conectividad LAN 10/100/1000 Intel 7260 Wilkins Peak 2 802.11 a/b/g/n. Bluetooth V4.0 High Speed.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 14 MSI PE60 6QE-->
+    <div data-role="page" id="msi14">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1_10.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>MSI PE60 6QE</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 20,997</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador Intel Core i7-6700HQ (2,6 Ghz / TDP: 47 W. / 6 Mb. Cache L3). Tarjeta Gráfica NVidia Geforce GTX 960M (2 Gb. GDDR5). Disco duro de 1 Tb. a 7.200 rpm. Memoria RAM de 8 Gb. DDR4 a 2.133 Mhz. (Ampliable a 32 Gb.). Pantalla 15,6" Full-HD (1920x1080) con tecnología Wide Viewing Angle. Gigabit Ethernet, Wifi-AC, WiDi y Bluetooth. 1 puerto USB 2.0, 2 puertos USB 3.0, 1 puerto USB 3.1 de tipo C, salida HDMI, salida miniDisplayPort, lector de tarjetas SD/MMC, teclado retroiluminado con bloque numérico independiente, altavoces Dynaudio con subwoofer, touchpad multi-táctil y webcam HD.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+    <!--  Pagina de Laptop 15 MSI WS60E-->
+    <div data-role="page" id="msi15">
+      <div data-role="header">
+        <div class="ui-btn-left">
+          <a href="#" data-role="button" data-inline="true" data-icon="back" data-iconpos="notext" data-rel="back">Volver</a>
+        </div>
+        <h1>Producto</h1>
+      </div>
+      <div data-role="content">
+        <div class="caja_blanca">
+          <div align="center"><img src="images/1_11.png" width="200" height="200"> </div>
+        </div>
+        <div class="caja_blanca">
+          <h4>MSI WS60</h4>
+          <hr color="#636D73" size=1>
+          <div class="ui-grid-a">
+            <div class="ui-block-a"><h5 style='color:#8C1B1B;'>MX$ 37,798</h5></div>
+            <div class="ui-block-b"><button>Comprar</button></div>
+          </div>
+        </div>
+        <div class="caja_blanca">
+          <strong><p align="justify">Descripción</p></strong>
+          <p align="justify">Procesador 4ta Generación Intel Core i7. Controlador Gráfico Nvidia Quadro N2100M 2GB GDDR5. Memoria RAM de 16GB DDR3 SODIMM (2x8GB). Disco duro de 1TB (7200 rpm S-ATA) + 128GB SSD M.2. Display 15.6" UltraHD, (3840*2160) 4K. Conectividad LAN 10/100/1000 Killer N1525, 802.11 b/g/n, Bluetooth V4.0 High Speed.</p>
+        </div>
+      </div>
+      <div data-role="footer">
+        <div data-role="navbar" data-position="fixed" data-id="footerid">
+          <ul>
+            <li> <a href="#" data-rel="back"="button" data-icon="arrow-l">Atras</a>
+            <li> <a href="#home" data-role="button" data-icon="home">Inicio</a>
+            <li> <a href="#info" data-rel="dialog" data-icon="info">Info</a>
+            <li> <a href="#form" data-role="button" data-icon="arrow-r">Siguiente</a>
+        </div> 
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>
